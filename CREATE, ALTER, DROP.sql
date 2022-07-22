@@ -1,0 +1,34 @@
+-- CREATE, ALTER, DROP
+
+-- 데이터베이스 생성
+CREATE DATABASE practice;
+USE practice;
+
+-- 테이블 생성
+CREATE TABLE MEMBER(
+		ID VARCHAR(20) PRIMARY KEY,
+        PASSWORD VARCHAR(30) NOT NULL,
+        NAME VARCHAR(5) NOT NULL,
+        PHONE VARCHAR(11),
+        EMAIL VARCHAR(30),
+        AGE VARCHAR(3)
+);
+
+-- MEMBER 테이블에 ADDR 컬럼 추가
+ALTER TABLE MEMBER ADD COLUMN ADDR VARCHAR(30) NOT NULL;
+
+-- MEMBER 테이블에 AGE 컬럼의 타입을 실수표현으로 변경
+-- numeric(전체자리수, 소수점길이)
+ALTER TABLE MEMBER MODIFY COLUMN AGE NUMERIC(3);
+
+-- MEMBER 테이블에 AGE 컬럼의 타입을 정수표현으로 변경
+ALTER TABLE MEMBER MODIFY COLUMN AGE INT;
+
+-- MEMBER 테이블 데이터 조회
+SELECT* FROM MEMBER;  
+
+-- MEMBER 테이블 제거
+DROP TABLE MEMBER;
+   
+
+   
